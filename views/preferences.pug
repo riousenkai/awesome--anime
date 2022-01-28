@@ -1,0 +1,15 @@
+extends layout-no-footer.pug
+block head
+  link(rel='stylesheet' href='/stylesheets/preferences.css')
+  link(rel='stylesheet' href='/stylesheets/scrollbar.css')
+block content
+  .app-paper
+    h1 Hello, #{user.username}
+    h2 Please select at least 1 genre
+    form(class='checkbox-list' action='/users/pref' method='POST')
+      each genre in genres
+        label(class='check-item')
+          input(class='pref' type='checkbox' name='interests' value=genre.id)
+          span= genre.genre
+      button(class='display-none submit-genre') Done!
+  script(src="/javascripts/pref.js")

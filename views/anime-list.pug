@@ -1,0 +1,73 @@
+extends layout-no-footer.pug
+block head
+  if authenticated
+    if user.dark_mode
+      style.
+        body {
+          background-color: #1D1D1D !important;
+          color: #ececec !important;
+        }
+        thead {
+          box-shadow: none !important;
+          border-bottom: 1px solid #ececec !important;
+        }
+        table {
+          box-shadow: none !important;
+          background: #36393F !important;
+        }
+        tr:nth-child(even) {
+          background-color: #878787 !important;
+        }
+        a {
+          color: #ececec !important;
+        }
+  link(rel='stylesheet' href='/stylesheets/list.css')
+  link(rel='stylesheet' href='/stylesheets/scrollbar.css')
+block content
+  include header
+  .form-group
+    if alists
+      .filter2
+        form(class='filter' method='POST' action='/list')
+          button(type='submit' class='btn' value='all' name='options') All
+        each list in alists
+          form(class='filter' method='POST' action='/list')
+            button(type='submit' class='btn' value=list.id name='options')= list.name
+    if customList
+      form(method='POST' action='/list' class='filter form' name='targ')
+        select(class='select4' name="options" id=`select`)
+          option(value='all') - Choose a custom list -
+          each custom in customList
+            option(value=custom.id)=custom.name
+        button(class='selectBtn') Select
+      button(class='selDel' onclick='delCustomList()') Delete
+    input(type="text" class='btn2' id='newlist1' placeholder='Create a new list here!')
+  table
+    thead
+      tr
+        th Cover
+        th Title
+        th Studio
+        th Aired
+        th Description
+        th List Type
+    tbody(class=`userz ${userId}`)
+      if lists
+        each list in lists
+          each anime in list.Animes
+            tr(id=`tr-${list.id}` class=`${anime.id} ${list.id}`)
+              td
+                img(class='listimg' src=anime.image_url)
+              td
+                a(href=`/anime/${anime.id}`)= anime.title
+              td
+                p= anime.studio
+              td
+                p= anime.aired
+              td.desc
+                p= anime.description
+              td
+                form(method='POST' action='/list')
+                  button(class=`liststatus ${list.id}` name='options' value=list.id)= list.name
+                button(class=`remove-list-btn ${anime.id}` name=`${anime.id}` onclick=`removeAnime(${list.id})`) Remove
+  script(src="/javascripts/list.js")

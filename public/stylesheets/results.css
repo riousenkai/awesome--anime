@@ -1,0 +1,84 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+header {
+  background-color: rgba(0, 123, 239) !important;
+  padding: 2rem 3rem !important;
+}
+.imgSearch {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+}
+.resTop {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.title {
+  width: 22rem;
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.resTop {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+.imgContainer {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  grid-gap: 4rem;
+  margin-top: 3rem;
+  margin-top: 4rem;
+  padding: 0 8rem;
+}
+.nester {
+  height: 34rem;
+  position: relative;
+  border-radius: 1rem;
+  cursor: pointer;
+  z-index: 100;
+  border-radius: 2rem;
+  transition: all 200ms;
+}
+.nester:hover {
+  transform: translateY(-0.4rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  text-decoration: underline;
+}
+.nester:active {
+  transform: translateY(0.4rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.card-desc {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 123, 239, 0.9);
+  padding: 2rem;
+  width: 100%;
+  display: block;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  opacity: 0;
+  transition: opacity 250ms;
+}
+.card-desc p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  user-select: none;
+}
+.nester:hover .card-desc {
+  opacity: 1;
+}

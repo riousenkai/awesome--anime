@@ -1,0 +1,136 @@
+.errors {
+  background-color: #ffb9c2;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+.errors ul {
+  list-style: none;
+}
+.errors h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.errors p {
+  font-weight: 400;
+  font-size: 1.2rem;
+  display: block;
+}
+.errors p:not(last-child) {
+  margin-bottom: 0.6rem;
+}
+.login-form {
+  height: 100vh;
+  display: flex;
+}
+.right-side {
+  flex: 0 0 50%;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(0, 123, 239, 0.72),
+      rgba(0, 123, 239, 0.72)
+    ),
+    url("https://wallpaperaccess.com/full/1740958.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.left-side {
+  flex: 50%;
+  padding: 20rem;
+  text-align: center;
+}
+.login-form form > * {
+  display: block;
+  width: 100%;
+}
+.thelogo {
+  height: 8rem;
+  margin-bottom: 2rem;
+}
+.submitbtn {
+  border: none;
+  background-color: rgb(0, 123, 239);
+  color: #fff;
+  margin-top: 1.2rem;
+  padding: 1.2rem 2rem;
+  border-radius: 0.82rem;
+  width: 100%;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin: 3rem 0;
+  transition: all 200ms;
+}
+.submitbtn:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+.submitbtn:active {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+}
+.submitbtn.diff {
+  background-color: #ff4c61;
+}
+.login-form form > *:not(:last-child) {
+  margin-bottom: 1.4rem;
+}
+.left-side h2 {
+  margin-bottom: 1.4rem;
+}
+.question {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #777;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+.marbot {
+  margin-bottom: 2rem;
+}
+form input {
+  border: none;
+  padding: 1rem;
+  font-family: Inter;
+  border-bottom: 1px black solid;
+}
+form input:focus {
+  border: none;
+}
+body::-webkit-scrollbar {
+  width: 12px;
+}
+body::-webkit-scrollbar-track {
+  background: white;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #4f546c47;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+body::-webkit-scrollbar-track-piece {
+  margin-top: 1px;
+  margin-bottom: 5px;
+}
+@media screen and (max-width: 1500px) {
+  .left-side {
+    padding: 15rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .left-side {
+    padding: 20rem;
+  }
+
+  .right-side {
+    flex: 0;
+  }
+}
+@media screen and (max-width: 800px) {
+  .left-side {
+    padding: 10rem;
+  }
+}

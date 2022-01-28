@@ -1,0 +1,36 @@
+extends layout-no-footer.pug
+block head
+  if authenticated
+    if user.dark_mode
+      style.
+        body {
+          background-color: #1D1D1D !important;
+        }
+  link(rel='stylesheet' href='/stylesheets/404.css')
+  link(rel='stylesheet' href='/stylesheets/login.css')
+  link(rel='stylesheet' href='/stylesheets/scrollbar.css')
+block content
+  include header
+
+  .chan-container
+    .chan
+        h3(class='text') It seems like you're lost, what do you want to do?
+        h3(class='home display-none')
+            a(href='/') Go Back Home!
+            li(class='brandon')
+                a(href='https://github.com/brandonlaursen' target="_blank" ) <i class="fab fa-github-square"></i> Brandon
+            li(class='neb')
+                a(href='https://github.com/nebbb' target="_blank" ) <i class="fab fa-github-square"></i> Nebyou
+            li(class='revan')
+                a(href='https://github.com/riousenkai' target="_blank" ) <i class="fab fa-github-square"></i> Revan
+        ul(class='profile linked display-none')
+            li(class='brandon')
+                a(href='https://www.linkedin.com/in/brandon-laursen-398563218' target="_blank" ) <i class="fab fa-linkedin"></i> Brandon
+            li(class='neb')
+                a(href='#') <i class="fab fa-linkedin"></i> Nebyou
+            li(class='revan')
+                a(href='https://www.linkedin.com/in/john-elijah-revan-fajardo-33a189a3/' target="_blank" ) <i class="fab fa-linkedin"></i> Revan
+        form(action="/")
+            button(class='prev') Go back home!
+        button(class='next' href='#') Keep walking
+    script(src="/javascripts/404.js")

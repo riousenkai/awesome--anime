@@ -1,0 +1,221 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: transparent;
+}
+.logo {
+  color: aliceblue;
+  font-weight: 800;
+  font-size: 2.2rem;
+  text-decoration: none;
+  user-select: none;
+}
+.logo:active {
+  border: none;
+}
+.nav-links {
+  list-style: none;
+  margin-right: 3rem;
+}
+.header__nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+.nav-links > * {
+  display: inline-block;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1.14rem;
+}
+.nav-links > *:not(:last-child) {
+  margin-right: 3rem;
+}
+.search_btn {
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-form input {
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 0 1.6rem;
+  height: 3.3rem;
+  outline: none;
+  border: none;
+  border-radius: 100px;
+  font-family: "Inter";
+  font-size: 1.3rem;
+  color: #fff;
+  transform: translateX(3.2rem);
+  animation: moveLeft 1s linear;
+  transition: all 200ms;
+}
+.search-btn {
+  background-color: rgba(0, 0, 0, 0.25);
+  display: flex;
+  width: 3.3rem;
+  height: 3.3rem;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 999;
+}
+.header__user {
+  display: flex;
+  align-items: center;
+  margin-left: 3rem;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding-right: 1rem;
+  border-radius: 100px;
+}
+.profile-pic {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+}
+.user-dropdown {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.15);
+  width: 2.7rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+.user-drop {
+  margin-top: 0.5rem;
+}
+.btn.logintext {
+  background-color: #fff;
+  color: rgb(0, 123, 239);
+  font-size: 1.2rem;
+  margin-left: 3rem;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 1rem 2.8rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+@media only screen and (max-width: 1055px) {
+  .header__nav {
+    display: none;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .btn.logintext {
+    padding: 0.8rem 2.2rem;
+  }
+}
+.logout-btn button {
+  color: #2d3436 !important;
+}
+.dropmenu {
+  position: absolute;
+  top: 3.3rem;
+  left: -12rem;
+  background-color: #dfe6e9;
+  border-radius: 1rem;
+  width: 15rem;
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  list-style: none;
+  gap: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease-in-out;
+}
+.dropmenu a {
+  font-size: 1.4rem;
+  color: #2d3436 !important;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.8rem;
+  width: 100%;
+  display: block;
+  border-radius: 0.4rem;
+  transition: background-color 200ms;
+  text-decoration: none;
+}
+.dropmenu a:hover {
+  background-color: #b2bec3;
+}
+.fas {
+  margin-right: 0.3rem;
+}
+
+.header__user:hover .dropmenu {
+  opacity: 1;
+  visibility: visible;
+}
+.logout-btn button {
+  font-size: 1.4rem;
+  font-family: Inter;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  background: none;
+  padding: 0.8rem;
+  width: 100%;
+  border-radius: 0.4rem;
+  text-align: left;
+  cursor: pointer;
+  color: #2d3436;
+}
+.logout-btn button:hover {
+  background-color: #b2bec3;
+}
+.display-none {
+  display: none;
+}
+.dropdown-user {
+  font-size: 1.4rem;
+  font-weight: 700;
+  background-color: #b2bec3;
+  width: 100%;
+  border-radius: 0.4rem;
+  text-align: left;
+  padding: 0.8rem;
+  cursor: pointer;
+  color: #2d3436;
+  user-select: none;
+}
+.hamburger {
+  display: none;
+}
+.hamburger-btn {
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 490px) {
+  .hamburger {
+    display: initial;
+  }
+}

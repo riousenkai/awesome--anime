@@ -1,0 +1,20 @@
+.footer {
+  padding: 2rem;
+  background-color: rgba(0, 123, 239);
+}
+.our-names-list {
+  list-style: none;
+  text-align: center;
+}
+.name-tag-li {
+  display: inline-block;
+  font-size: 1.4rem;
+  color: #fff;
+}
+.name-tag-li:not(:last-child) {
+  margin-right: 2rem;
+}
+.name-tag {
+  text-decoration: none;
+  color: #fff;
+}

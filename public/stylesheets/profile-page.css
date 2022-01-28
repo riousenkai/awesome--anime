@@ -1,0 +1,116 @@
+header {
+  background-color: rgba(0, 123, 239) !important;
+  padding: 2rem 3rem !important;
+}
+body {
+  color: #4f546c;
+}
+table {
+  border-collapse: collapse;
+  box-shadow: 0 0.7rem 1.2rem #e1e5ee;
+  text-align: left;
+  overflow: hidden;
+  margin-top: 6rem;
+  width: 100%;
+}
+.listimg {
+  height: 22.5rem;
+  display: block;
+}
+thead {
+  box-shadow: 0 0.7rem 1.2rem #e1e5ee;
+}
+.btn {
+  border: none;
+  background-color: rgb(0, 123, 239);
+  color: #fff;
+  font-size: 1.2rem;
+  margin-left: 3rem;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 1.4rem 2.8rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  transition: all 200ms;
+}
+.btn:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+.btn:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}
+.selecter {
+  font-size: 1.2rem;
+  padding: 1.2rem;
+  font-family: Inter;
+}
+.filter {
+  margin: 3rem auto;
+}
+th {
+  padding: 2rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+td {
+  padding: 2rem 3rem;
+}
+.liststatus {
+  border-radius: 0.6rem;
+  padding: 1.1rem 1.4rem;
+  text-align: center;
+  background-color: #c8e6c9;
+  color: #388e3c;
+  border: none;
+  font-size: 1rem;
+}
+tr:nth-child(even) {
+  background-color: #f4f6fb;
+}
+p {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+a {
+  color: #4f546c;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+.profile-bg {
+  position: relative;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(0, 123, 239, 0.88),
+      rgba(0, 123, 239, 0.88)
+    ),
+    url("https://wallpapercave.com/wp/wp1894643.jpg");
+  height: 30vh;
+  background-size: cover;
+  width: 100%;
+  text-align: center;
+}
+.profile-container {
+  margin-top: 15rem;
+  display: inline-block;
+}
+.profile-img {
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.profile-desc {
+  text-align: center;
+  padding: 2rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+}
+.profile-info {
+  margin-top: 8rem;
+}
+#userDescription {
+  margin-top: .5rem;
+}

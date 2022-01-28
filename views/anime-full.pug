@@ -1,0 +1,35 @@
+extends layout-no-footer.pug
+block head
+  if authenticated
+    if user.dark_mode
+      style.
+        body {
+          background-color: #1D1D1D !important;
+        }
+        .reccomended-text {
+          color: #ececec !important;
+        }
+        .filter-title {
+          color: #ececec !important;
+        }
+  link(rel='stylesheet' href='/stylesheets/anime-full.css')
+  link(rel='stylesheet' href='/stylesheets/scrollbar.css')
+block content
+  include header
+  .anime-browser
+    if genres
+      h1(class='filter-title') Genres
+      each genre in genres
+        a(class='filter-link' href=`/anime/genre/${genre.id}`) #{genre.genre}
+  if genreTitle
+    p(class="reccomended-text")= genreTitle
+  else
+    p(class="reccomended-text") Anime
+
+  .anime-grid
+    each anime in allAnime
+        .anime-card
+            a(href=`/anime/${anime.id}`)
+                img(class='anime-img' src=anime.image_url)
+            .card-desc
+                p= anime.title

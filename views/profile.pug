@@ -1,0 +1,65 @@
+extends layout-no-footer.pug
+block head
+  if authenticated
+    if user.dark_mode
+      style.
+        body {
+          background-color: #1D1D1D !important;
+          color: #ececec !important;
+        }
+        thead {
+          box-shadow: none !important;
+          border-bottom: 1px solid #ececec !important;
+        }
+        table {
+          box-shadow: none !important;
+          background: #36393F !important;
+        }
+        tr:nth-child(even) {
+          background-color: #878787 !important;
+        }
+        a {
+          color: #ececec !important;
+        }
+        .profile-desc {
+          box-shadow: none !important;
+        }
+  link(rel='stylesheet' href='/stylesheets/profile-page.css')
+  link(rel='stylesheet' href='/stylesheets/scrollbar.css')
+block content
+  include header
+  div(class='profile-bg')
+    div(class='profile-container')
+      img(class='profile-img', src=profilePic)
+  div(class='profile-desc')
+    div(class='profile-info')
+      h1(id='username')= username
+      h1(id='userDescription')= description
+
+
+  table
+    thead
+      tr
+        th Cover
+        th Title
+        th Studio
+        th Aired
+        th Description
+        th List Type
+    tbody
+      if usersList
+        each list in usersList
+          each anime in list.Animes
+            tr
+              td
+                img(class='listimg' src=anime.image_url)
+              td
+                a(href=`/anime/${anime.id}`)= anime.title
+              td
+                p= anime.studio
+              td
+                p= anime.aired
+              td
+                p= anime.description
+              td
+                button(class='liststatus')= list.name

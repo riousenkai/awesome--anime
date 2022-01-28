@@ -1,0 +1,26 @@
+extends layout-no-footer.pug
+
+block head
+  if authenticated
+    if user.dark_mode
+      style.
+        body {
+          background-color: #1D1D1D !important;
+          color: #ececec !important;
+        }
+        a {
+          color: #ececec !important;
+        }
+        button {
+          color: #ececec !important;
+        }
+  link(rel='stylesheet' href='/stylesheets/search.css')
+  link(rel='stylesheet' href='/stylesheets/scrollbar.css')
+block content
+    include header
+    form(action="/search" method="POST")
+        .input-container.search-container
+            input(class='search' type="text" name="search" autocomplete="off" spellcheck="false")
+            button(class='search-btn-1' type="submit") <i class="fas fa-search"></i>
+        ul(class='results')
+    script(src="/javascripts/search.js")

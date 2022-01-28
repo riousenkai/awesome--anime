@@ -1,0 +1,123 @@
+extends layout.pug
+block head
+  if authenticated
+    if user.dark_mode
+      style.
+        body {
+          background-color: #1D1D1D !important;
+          }
+        .reccomended-text {
+          color: #ececec !important;
+        }
+        .featured-anime {
+          background-color: #1D1D1D !important;
+        }
+        .featured-anime::after {
+          background-color: #111111 !important;
+        }
+        .hero-title {
+          color: #ececec !important;
+        }
+        .btn {
+          color: #ececec !important;
+        }
+        .line {
+            background-color: #ececec !important;
+        }
+        .hero-calendar {
+            color: #ececec !important;
+        }
+        .hero-title-news {
+            color: #ececec !important;
+        }
+        .news-card {
+            border: 1px solid #777 !important;
+            box-shadow: none !important;
+        }
+  link(rel='stylesheet' href='/stylesheets/index.css')
+  link(rel='stylesheet' href='/stylesheets/scrollbar.css')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  meta(property="og:url" content="https://awesome-anime.herokuapp.com/")
+  meta(property="og:type" content="website")
+  meta(property="og:title" content="awesome/Anime")
+  meta(property="og:description" content="Anime is Awesome. Now we can continue.")
+  meta(property="og:image" content="https://cdn.discordapp.com/attachments/881657155265114132/916005082787639316/awesome-anime.png")
+
+block content
+    main
+        .anime__hero
+            include header.pug
+            .featured-anime
+                .anime-img
+                .anime-content
+                    a(class="btn first-btn featuredtext") Featured
+                    a(class="btn newstext") News
+                    p(class='hero-title') 'Fate/Grand<br> Order' Special<br> 'Fate/Grand<br> Carnival' Gets<br> OVA
+                    .loading.loading-text.display-none
+                    .loading.loading-text.display-none
+                    .loading.loading-text.display-none
+                    .loading.loading-text.display-none
+                    .loading.loading-text.last-text.display-none
+                    p(class="hero-calendar") <svg class="calendar-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 12/31/2020
+                    .slider
+                        .active-dot.slider-0.dot
+                        .slider-1.dot
+                        .slider-2.dot
+                        .slider-3.dot
+                a(class="next-anime")
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        .anime-main-content
+            if authenticated
+                .reccomend.mar-bottom-8
+                    .wrapper
+                        p(class="reccomended-text") Recommended For You
+                        .line
+                        a(class="wrapper-text" href="/anime/recommended") View All
+                    .reccomended-anime
+                        each anime in finallyWeAreDoneOmg
+                            .card
+                                a(href=`/anime/${anime.id}`)
+                                    img(src=anime.image_url, alt="Anime card", class="anime-card")
+                                .card-desc
+                                    p= anime.title
+            .reccomend.mar-bottom-8
+                .wrapper
+                    p(class="reccomended-text") Winter 2021 Anime
+                    .line
+                    a(class="wrapper-text" href="/anime/winter") View All
+                .reccomended-anime
+                    each anime in winterAnime
+                        .card
+                            a(href=`/anime/${anime.id}`)
+                                img(src=anime.image_url, alt="Anime card", class="anime-card")
+                            .card-desc
+                                p= anime.title
+            .reccomend.mar-bottom-8
+                .wrapper
+                    p(class="reccomended-text") Top Airing Anime
+                    .line
+                    a(class="wrapper-text" href="/anime/top") View All
+                .reccomended-anime
+                    each anime in topAnime
+                        .card
+                            a(href=`/anime/${anime.id}`)
+                                img(src=anime.image_url, alt="Anime card", class="anime-card")
+                            .card-desc
+                                p= anime.title
+            .mar-bottom-8
+                .wrapper
+                    p(class="reccomended-text") Anime & Manga News
+                    .line
+                    a(class="wrapper-text" href="#") View All
+                .news
+                    .news-card
+                        div(class="news-card-img oneq")
+                        .news-card-desc
+                            p(class='hero-title-news') Third Season of<br>'IDOLiSH7'<br>Announced
+                            p(class="hero-calendar") <svg class="calendar-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 12/31/2020
+                    .news-card
+                        div(class="news-card-img twoq")
+                        .news-card-desc
+                            p(class='hero-title-news') 'Hortensia Saga' TV<br>Anime Expands<br>Voice Cast
+                            p(class="hero-calendar") <svg class="calendar-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 12/31/2020
+    script(src="/javascripts/home.js")

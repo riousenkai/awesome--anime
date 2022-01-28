@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+      block head
+      title=title
+      link(rel='stylesheet' href='/stylesheets/reset.css')
+      link(rel='stylesheet' href='/stylesheets/header.css')
+      link(rel='stylesheet' href='/stylesheets/footer.css')
+      link(rel='stylesheet' href='/stylesheets/scrollbar.css')
+      meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  body
+    block content
+  .footer
+    .our-names
+      ul(class='our-names-list')
+        li(class='name-tag-li')
+          a(class='name-tag' target="_blank" href='https://github.com/brandonlaursen') <i class="fab fa-github"></i> Brandon
+        li(class='name-tag-li')
+          a(class='name-tag' target="_blank" href='https://github.com/nebbb') <i class="fab fa-github"></i> Nebyou
+        li(class='name-tag-li')
+          a(class='name-tag' target="_blank" href='https://github.com/riousenkai') <i class="fab fa-github"></i> Revan

@@ -1,0 +1,362 @@
+.anime__hero {
+  position: relative;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(0, 123, 239, 0.88),
+      rgba(0, 123, 239, 0.88)
+    ),
+    url("https://wallpapercave.com/wp/wp1894643.jpg");
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  padding: 1.6rem 6rem;
+  z-index: 100;
+  overflow: hidden;
+}
+.featured-anime {
+  position: relative;
+  height: 42rem;
+  display: flex;
+  background-color: #fff;
+  margin: 2.4rem auto;
+  border-radius: 2rem;
+  max-width: 105rem;
+}
+.featured-anime::after {
+  overflow: initial;
+  width: 100%;
+  height: 85%;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.42);
+  position: absolute;
+  transform: translate(1.6rem, 0);
+  border-radius: inherit;
+  top: 7%;
+  z-index: -10;
+}
+.anime-img {
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  width: 100%;
+  height: 100%;
+  flex-basis: 65%;
+  background-image: url("https://i.ibb.co/qrF382M/fategrandordercarnival-keyvisual-1-e1609432627508-1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.anime-content {
+  flex-basis: 35%;
+  padding: 5rem 3rem;
+}
+.btn {
+  background-color: rgb(0, 123, 239);
+  color: #fff;
+  padding: 1rem 2.2rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.featuredtext {
+  font-size: 1.1rem;
+}
+.newstext {
+  font-size: 1.1rem;
+}
+.first-btn {
+  margin-right: 1.4rem;
+}
+.hero-title {
+  margin: 2.5rem 0;
+  font-size: 3.3rem;
+  font-weight: 800;
+}
+.hero-calendar {
+  color: #777;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  width: 10rem;
+}
+.slider {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+.dot {
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  background-color: rgba(0, 123, 239, 0.3);
+}
+.dot:not(:last-child) {
+  margin-right: 2rem;
+}
+.active-dot {
+  width: 5rem;
+  height: 1.4rem;
+  border-radius: 100px;
+  background-color: rgb(0, 123, 239);
+}
+.next-anime {
+  position: absolute;
+  margin-left: 107rem;
+  margin-top: 18rem;
+  cursor: pointer;
+}
+.anime-main-content {
+  margin-top: 5rem;
+  padding: 0 8rem;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.reccomended-text {
+  font-weight: 800;
+  font-size: 2.2rem;
+  margin-right: 8rem;
+  user-select: none;
+}
+.line {
+  flex: 1;
+  background-color: rgb(238, 238, 238);
+  height: 0.4rem;
+  width: 60%;
+  border-radius: 100px;
+}
+.wrapper-text {
+  user-select: none;
+  margin-left: 4rem;
+  font-weight: 800;
+  font-size: 1.36rem;
+  text-transform: uppercase;
+  color: rgb(0, 123, 239);
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.reccomended-anime {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 4rem;
+  margin-top: 3rem;
+}
+.card {
+  height: 34rem;
+  position: relative;
+  border-radius: 1rem;
+  cursor: pointer;
+  z-index: 100;
+  border-radius: 2rem;
+  transition: all 200ms;
+}
+.card:hover {
+  transform: translateY(-0.4rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.card:active {
+  transform: translateY(0.4rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.anime-card {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+}
+.card-desc {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 123, 239, 0.9);
+  padding: 2rem;
+  width: 100%;
+  display: block;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  opacity: 0;
+  transition: opacity 250ms;
+}
+.card-desc p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  user-select: none;
+}
+.card:hover .card-desc {
+  opacity: 1;
+}
+.mar-bottom-8 {
+  margin-bottom: 8rem;
+}
+.loading {
+  background-image: none !important;
+  opacity: 0.7;
+  animation: loading-effect 1s linear infinite alternate;
+}
+.loading-text {
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+.last-text {
+  margin-bottom: 0;
+  width: 80%;
+}
+@keyframes loading-effect {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+.display-none {
+  display: none;
+}
+@media only screen and (max-height: 870px) {
+  .featured-anime {
+    height: 39rem;
+  }
+  .anime-content {
+    padding: 4rem 3rem;
+  }
+}
+@media only screen and (max-height: 830px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  .featured-anime {
+    height: 37rem;
+  }
+  .anime-content {
+    padding: 3rem 3rem;
+  }
+}
+@media only screen and (max-height: 800px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  .featured-anime {
+    height: 35rem;
+  }
+  .anime-content {
+    padding: 2.6rem 3rem;
+  }
+}
+@media only screen and (max-width: 990px) {
+  .hero-title {
+    font-size: 2.6rem;
+  }
+  .reccomended-anime {
+    grid-gap: 3rem;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .anime__hero {
+    padding: 1.6rem 4rem;
+  }
+  .anime-main-content {
+    padding: 0 4rem;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .anime-img {
+    flex-basis: 75%;
+  }
+  .anime-main-content {
+    padding: 0 3rem;
+  }
+}
+@media only screen and (max-width: 570px) {
+  .anime-main-content {
+    padding: 0 2rem;
+  }
+  .anime-content {
+    display: none;
+  }
+  .anime-img {
+    flex-basis: 100%;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+  }
+}
+@media only screen and (max-width: 490px) {
+  .anime-main-content {
+    padding: 0 2rem;
+  }
+  .reccomended-text {
+    font-size: 1.8rem;
+  }
+  .wrapper-text {
+    font-size: 1.1rem;
+  }
+  .logo {
+    font-size: 1.8rem !important;
+  }
+  .header__user {
+    display: none !important;
+  }
+  .reccomended-anime {
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    grid-gap: 2rem;
+  }
+  .card {
+    height: 28rem;
+  }
+}
+.news {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+}
+.news-card {
+  cursor: pointer;
+  flex: 1;
+  min-width: 40rem;
+  max-width: 60rem;
+  display: flex;
+  height: 25rem;
+  overflow: hidden;
+  border-radius: 2rem;
+  transition: all 200ms;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
+}
+.news-card:hover {
+  transform: translateY(-3px);
+}
+.news-card:active {
+  transform: translateY(3px);
+}
+.news-card-img {
+  flex: 0 0 50%;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+.news-card-desc {
+  flex: 1;
+  padding: 1rem 2rem;
+}
+.oneq {
+  background-image: url("https://cdn.myanimelist.net/s/common/uploaded_files/1609108960-e913fff33eaf56246045c27194e48860.jpeg");
+}
+.twoq {
+  background-image: url("https://i.ibb.co/rcG22bs/Eq-IDf-YLXIAE0b-Dy.jpg");
+}
+.hero-title-news {
+  margin: 2.5rem 0;
+  font-size: 2.3rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+}

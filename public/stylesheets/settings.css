@@ -1,0 +1,135 @@
+header {
+  background-color: rgba(0, 123, 239) !important;
+  padding: 2rem 3rem !important;
+}
+body {
+  color: #4f546c;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+#username {
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0,69,134, 0.367);
+  font-weight: 600;
+  margin-top: 10px;
+}
+@keyframes gradientColor {
+  0% {background-position: 0 50%;}
+  50% {background-position: 100% 50%;}
+  100%{background-position: 0 50%;}
+}
+#username:hover {
+  animation: gradientColor 3s ease-in-out infinite;
+  background: linear-gradient(-60deg, #228df1, #005CB3, #004586, #2f3240);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#profilePic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border-radius: 100%;
+  height: 350px;
+  width: 350px;
+  border: 1px solid #B5A4A4;
+  outline: none;
+}
+#profilePic:hover {
+  opacity: .5;
+  transition: .5s ease;
+}
+.containerDesc {
+  border-bottom: 2px solid #4f546c79;
+  width: 360px;
+  text-align: center;
+  margin: 1rem auto;
+}
+#description {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  width: 100%;
+  display: inline-block;
+  align-content: center;
+}
+#editForm {
+  margin-top: 20px;
+  text-align: center;
+}
+.footer {
+  height: 40px;
+  background-color: rgba(0, 123, 239);
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
+  position: fixed;
+}
+.containerForm {
+  display: block;
+  text-align: center;
+  margin: auto;
+  width: 360px;
+}
+#editDesc {
+  width: 100%;
+}
+#space{
+  margin-bottom: 2px;
+}
+#editProfPic {
+  width: 100%;
+}
+#editBtn {
+  border: none;
+  background-color: rgb(0, 123, 239);
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+  text-decoration: none;
+  padding: .4rem .8rem;
+  border-radius: 0.4rem;
+  transition: all 200ms;
+  font-family: Inter;
+  float: left;
+  margin-bottom: 60px;
+}
+#editBtn:hover {
+  background-color: rgb(2, 111, 213);
+}
+h4 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  float: left;
+}
+input, select, textarea{
+  color: #4f546c45;
+}
+input:hover, select:hover, textarea:hover{
+  color: #4f546ca7;
+}
+
+h1#username {
+  user-select: none;
+}
+
+img#profilePic {
+  user-select: none;
+}
+
+h1#description {
+  user-select: none;
+  padding: 1rem;
+  word-break: break-all;
+}
+
+input:focus {
+  outline: none;
+}
+
+#editform input {
+  margin-bottom: 1rem;
+}

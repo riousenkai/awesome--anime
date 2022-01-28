@@ -1,0 +1,23 @@
+extends layout-no-footer.pug
+block head
+  if authenticated
+    if user.dark_mode
+      style.
+        body {
+          background-color: #1D1D1D !important;
+          color: #ececec !important;
+        }
+  link(rel='stylesheet' href='/stylesheets/results.css')
+  link(rel='stylesheet' href='/stylesheets/scrollbar.css')
+block content
+
+    include header
+    p(class='resTop') #{results.length} Search Results:
+    if results
+        div(class="imgContainer")
+            each result in results
+                div(class="nester")
+                    a(href=`/anime/${result.id}`)
+                        img(src=result.image_url class="imgSearch")
+                    .card-desc
+                        p= result.title

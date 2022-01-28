@@ -1,0 +1,97 @@
+extends layout-no-footer.pug
+block head
+  if authenticated
+    if user.dark_mode
+      style.
+        body {
+          background-color: #1D1D1D !important;
+        }
+        .review-item1 {
+          box-shadow: none !important;
+          background: #111111 !important;
+        }
+        .review-title {
+          color: #ececec !important;
+        }
+        .demoSaid {
+          color: #ececec !important;
+        }
+        .reviewsTitle {
+          color: #ececec !important;
+        }
+  style.
+    .header-anime {
+      height: 30rem;
+      position: relative;
+      background-image: linear-gradient(
+      to right bottom,
+      rgba(0, 123, 239, 0.32),
+      rgba(0, 123, 239, 0.32)
+    ),
+    url(#{poster_url});
+      background-size: cover;
+      background-position: center;
+    }
+
+  link(rel='stylesheet' href='/stylesheets/anime-page.css')
+  link(rel='stylesheet' href='/stylesheets/scrollbar.css')
+block content
+
+  div(class='hero-header')
+
+    div(class='header-anime')
+      include header.pug
+      div(class='anime-title')
+        h1(id='title')= title
+        if authenticated
+          form(id='icons' name='list')
+            div(class='ibtn add' id='addButtonContainer')
+              each list in userLists
+                button(class="add-to-list btn" value=list.id)= list.name
+              if customLists.length
+                div(class='custom-lists btn')
+                  div(class='custom-lists-container')
+                    select(id='customSelect')
+                      each customlist in customLists
+                        option(class='add-to-list list-btn cust' value=customlist.id)= customlist.name
+                    button(onclick=`customAdd()` class='addBtn') Add
+      div(class='anime-image-container')
+        img(class='anime-image' src=image_url)
+
+    div(class='info-anime')
+      div(class='anime-page-box')
+        div(class='anime-description')
+          h2(class='Synopsis') Synopsis
+          p(class='des')= description
+
+        div(class='anime-details1')
+          h3= `Episodes: ${episodes}`
+          h3= `Status: ${status}`
+          h3= `Aired: ${aired}`
+          h3= `Studio: ${studio}`
+        div(class='rating-box')
+          h2= `Rating: ${rating}`
+
+  if authenticated
+    div(class='review-item1')
+      h2(class='review-title') Leave a Review
+      form(class='review-form2' id='submit')
+        input(type='text' class="submitInput" name='description' autocomplete='off' placeholder="Leave a review...")
+        button(class=`${userId} user` id='sbutton' type='submit') Submit
+  else
+    div(class='review-item2')
+      br
+      h2(class='review-title2') Please login to submit a review
+      div(class='cont')
+
+        form(class='review-form2' id='submit')
+        a(href='/login')
+          button(class=`${userId} user` id='lbutton' type='submit') Login
+        a(href='/register')
+          button(id='rbutton' type='submit') Register
+
+  div(class='review-item3')
+    h2(class='reviewsTitle') Reviews
+    ul(id='reviews')
+      script(src="/javascripts/reviews.js")
+      script(src="/javascripts/anime-page.js")

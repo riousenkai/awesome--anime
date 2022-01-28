@@ -1,0 +1,26 @@
+extends layout-no-footer.pug
+block head
+    link(rel='stylesheet' href='/stylesheets/login.css')
+    link(rel='stylesheet' href='/stylesheets/scrollbar.css')
+block content
+    .login-form
+        .left-side
+            if errors
+                div(class='errors')
+                    h3 The following errors have happened
+                    ul
+                        each error in errors
+                            li
+                                p= error
+            a(href='/' class='logo-link')
+                img(src="newLogo.png", alt="Logo", class="thelogo")
+            h2 Login
+            form(action='/login' method='POST')
+                input(type='hidden' name='_csrf' value=csrfToken)
+                input(type='username' placeholder='username' name='username' value=username autocomplete="off")
+                input(type='password' placeholder='password' name='password' autocomplete="off")
+                button(type='submit' class='submitbtn') Login
+            form(action='/users/demo' method='POST')
+                button(type='submit' class='submitbtn diff marbot') Demo
+            a(href='/register' class='question') Want to create an account?
+        .right-side

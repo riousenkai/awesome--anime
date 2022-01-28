@@ -1,0 +1,28 @@
+extends layout-no-footer.pug
+block head
+  if authenticated
+    if user.dark_mode
+      style.
+        body {
+          background-color: #1D1D1D !important;
+          color: #ececec !important;
+        }
+  link(rel='stylesheet' href='/stylesheets/settings.css')
+block content
+    include header
+    h1#username= user.username
+    //- h1#darkmode= user.dark_mode
+    img(id='profilePic', src=user.profile_pic_url)
+    div.containerDesc
+        h1#description= user.description
+    div.containerForm
+        form(action='/settings' method='POST' id="editForm" onsubmit='counter()')
+            h4 Edit description
+            input#editDesc(type="text" name="description" value=user.description)
+            p#space
+            h4 Edit picture
+            input#editProfPic(type="text" name="profile_pic_url" value=user.profile_pic_url)
+            p#space
+            button#editBtn(type="submit") Edit
+    .footer
+    script(src='/javascripts/settings.js')

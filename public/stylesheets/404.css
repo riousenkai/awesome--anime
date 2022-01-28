@@ -1,0 +1,73 @@
+header {
+  background-color: rgba(0, 123, 239) !important;
+  padding: 2rem;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.chan-container {
+  width: 100%;
+  height: 70rem;
+  margin-top: 5rem;
+}
+h3 {
+  color: #fff;
+  font-size: 2rem;
+  display: block;
+}
+.chan {
+  background-color: #000;
+  max-width: 100rem;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  background-position: bottom;
+  padding-top: 25rem;
+  text-align: center;
+}
+.prev {
+  position: absolute;
+  width: 49%;
+  bottom: 0;
+  left: 0%;
+  height: 5rem;
+  cursor: pointer;
+}
+.next {
+  position: absolute;
+  width: 51%;
+  bottom: 0;
+  right: 0%;
+  height: 5rem;
+  cursor: pointer;
+}
+.profile {
+  list-style: none;
+  margin-top: 6rem;
+}
+.profile > * {
+  display: inline-block;
+}
+.profile > *:not(:last-child) {
+  margin-right: 2rem;
+}
+li a {
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+.display-none {
+  display: none;
+}
+.home {
+  margin-top: 3rem;
+}
+.home a {
+  color: #007bef;
+}
