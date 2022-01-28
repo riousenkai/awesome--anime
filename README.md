@@ -1,5 +1,7 @@
 <a href="https://awesome-anime.herokuapp.com/"> <img src="https://cdn.discordapp.com/attachments/887079736923287582/888559916263026718/newLogo.png" width="60px" height="60px"> </a>
 
+## Please note that this repository has been remade due to issues with the original repo.
+
 # [awesome/Anime](https://awesome-anime.herokuapp.com/) (Best viewed in 1920 x 1080 resolution)
 ### 2-3 billion people worldwide watch a multicultural form of entertainment: Anime. The Anime industry alone reached new sales records of $19.8 billion in 2017.
 ### awesome/Anime takes inspiration from this as a goodreads clone that is feature-rich with an Anime style and theme.
