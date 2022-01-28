@@ -34,7 +34,7 @@
   * View a user's profile page to view their username, biography, and a complete collection of Anime in their list.
 * Settings page
   * Update profile description and image (through a url).
-* Night mode
+* Dark mode
 
 ## Log In
 ![Screen Shot 2021-12-29 at 3 43 52 PM](https://user-images.githubusercontent.com/83096378/147702056-50287bf0-ba19-4e01-8e6c-101b09a0628a.png)
